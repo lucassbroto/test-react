@@ -16,8 +16,6 @@ function Todo(props) {
 
   function deleteHandler() {
       setModalIsOpen(true);
-
-
   };
   
   function closeModalHandler(){
@@ -30,8 +28,8 @@ function Todo(props) {
       <div className="actions">
         <button className="btn" onClick = {deleteHandler}>Sim</button>
       </div>
-      {modalIsOpen ? <Modal /> : null}
-      {modalIsOpen && <Backdrop onCancel = {closeModalHandler}/>}
+      {modalIsOpen ? <Modal onCancel = {closeModalHandler} onConfirm = {closeModalHandler}/> : null}
+      {modalIsOpen && <Backdrop outClick = {closeModalHandler}/>}
     </div>
   );
 }

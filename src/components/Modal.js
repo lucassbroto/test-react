@@ -1,11 +1,22 @@
-function Modal() {
+function Modal(props) {
+
+  function cancelHandler(){
+      props.onCancel();
+
+  }
+
+  function confirmHandler(){
+      props.onConfirm();
+  }
+
   return (
     <div className = "modal">
       <p>tem filho desse tamanho?</p>
-      <button className = 'btn btn --alt'>Ai, Gabi</button>
-      <button className = 'btn'>Cair de moto e me rala </button>
+      <button className = 'btn btn --alt' onClick = {cancelHandler}>Cancel</button>
+      <button className = 'btn' onClick = {confirmHandler}>Confirm </button>
     </div>
   );
 }
 
 export default Modal;
+  
